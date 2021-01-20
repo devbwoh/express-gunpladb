@@ -1,0 +1,23 @@
+{
+  "name": "gunpla",
+  "version": "1.0.0",
+  "description": "Express Gunpla",
+  "main": "src/gunpla.ts",
+  "scripts": {
+    "build": "rm -rf build/ && tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://8933144b301b3f32b50b180a0805af343aed222a@github.com/devbwoh/express-gunpladb.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devbwoh/express-gunpladb/issues"
+  },
+  "homepage": "https://github.com/devbwoh/express-gunpladb#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.11",
+    "@types/mysql": "^2.15.17"
+  }
+}
