@@ -105,3 +105,6 @@ dist
 
 # Goorm
 goorm.manifest
+
+# Build (js)
+build/
