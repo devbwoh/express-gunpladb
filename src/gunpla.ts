@@ -61,7 +61,7 @@ app.get('/select_id', (req: Request, res: Response) => {
 	})
 });
 
-app.get('/gunpla/id', (req: Request, res: Response) => {
+app.get('/gunpla/:id', (req: Request, res: Response) => {
 	const query: string = "select * from gunpla where id = ?";
 	dbc.query(query, [ req.params.id ], (err, rows) => {
 		if (err) return console.log(err);
