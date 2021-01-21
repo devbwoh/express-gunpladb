@@ -4,7 +4,8 @@
   "description": "Express Gunpla",
   "main": "src/gunpla.ts",
   "scripts": {
-    "build": "rm -rf build/ && tsc"
+    "build": "rm -rf build/ && tsc",
+  	"start": "node build/index.js"
   },
   "repository": {
     "type": "git",
