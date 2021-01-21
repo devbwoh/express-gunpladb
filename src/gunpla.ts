@@ -1,10 +1,12 @@
 import express, { Request, Response } from "express"
 import mysql from "mysql"
 import cors from "cors"
+import bodyParser from "body-parser"
 
 const app = express()
 
 app.use(cors())
+app.use(bodyParser.json())
 
 const dbc = mysql.createConnection({
 	host: 'localhost',
@@ -68,3 +70,23 @@ app.get('/gunpla/:id', (req: Request, res: Response) => {
 		res.send(rows);
 	})
 });
+
+app.post('/mechanic/', (req: Request, res: Response) => {
+	const query: string = "insert into mechanic values (?)";
+	const mechanic = [
+		req.body.id,
+		req.body.name,
+		req.body.model,
+		req.body.manufacturer,
+		req.body.armor,
+		req.body.height,
+		req.body.weight
+	]
+	dbc.query(query, [ mechanic ], (err, rows) => {
+		if (err) throw err;
+		res.json({
+		  status: 200,
+		  message: "Success: Add new mechanic"
+		})
+	})
+})
